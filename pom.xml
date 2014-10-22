@@ -51,23 +51,31 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
-					<packagingIncludes>WEB-INF/web.xml</packagingIncludes>
+					<packagingIncludes>WEB-INF/lib/standard*.jar,**/*.jsp,**/*.xml,**/*.properties,**/*.class,**/*.png,**/*.css,**/*.js,**/*.tld,**/mime.types</packagingIncludes>
 				</configuration>
 			</plugin>
 
 		</plugins>
 	</build>
-	<!-- Apache cxf dependency -->
 	<dependencies>
-	<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-rt-frontend-jaxws</artifactId>
-		<version>3.0.2</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-rt-transports-http</artifactId>
-		<version>3.0.2</version>
-	</dependency>
+		<!-- Apache cxf dependency -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
 	</dependencies>
 </project>
